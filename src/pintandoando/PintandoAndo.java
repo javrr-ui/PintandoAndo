@@ -5,6 +5,9 @@
  */
 package pintandoando;
 
+import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
+
 /**
  *
  * @author Javi
@@ -16,6 +19,19 @@ public class PintandoAndo {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        
+        SwingUtilities.invokeLater(new Runnable(){
+            public void run(){
+                createAndShowGUI();
+            }  
+        });
     }
     
+    public static void createAndShowGUI(){
+        
+        JFrame frame = new JFrame("Swing paint demo");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(500, 500);
+        frame.setVisible(true);
+    }
 }
