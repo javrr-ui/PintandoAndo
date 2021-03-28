@@ -22,10 +22,7 @@ import java.awt.event.MouseMotionAdapter;
  */
 public class MiPanel extends JPanel{
     
-    private int squareX = 50;
-    private int squareY = 50;
-    private int squareW = 20;
-    private int squareH = 20;
+    private Cuadrito cuadro = new Cuadrito();
     
     public MiPanel(){
         setBorder(BorderFactory.createLineBorder(Color.black));
@@ -34,6 +31,7 @@ public class MiPanel extends JPanel{
             
             @Override
             public void mousePressed(MouseEvent e){
+                
                 moveSquare(e.getX(),e.getY());
             }
             
@@ -51,12 +49,24 @@ public class MiPanel extends JPanel{
     }
     
     private void moveSquare(int x, int y){
+        
+        final int CURR_X = cuadro.getX();
+        final int CURR_Y = cuadro.getY();
+        final int CURR_W = cuadro.getWidth();
+        final int CURR_H = cuadro.getHeight();
+        
         int OFFSET = 1;
-        if(squareX!=x||squareY!=y){
-            repaint(squareX,squareY,squareW+OFFSET,squareH+OFFSET);
-            squareX=x;
-            squareY=y;
-            repaint(squareX,squareY,squareW+OFFSET,squareH+OFFSET);
+        if(CURR_X!=x||CURR_Y!=y){
+            
+            // The square is moving, repaint background 
+            // over the old square location. 
+            repaint(CURR_X,CURR_Y,CURR_W+OFFSET,CURR_H+OFFSET);
+            
+            //Update coordenates
+            cuadro.setX(x);
+            cuadro.setY(y);
+            //Repaint the square at the new location
+            repaint(cuadro.getX(),cuadro.getY(),cuadro.getWidth()+OFFSET,cuadro.getHeight()+OFFSET);
         }
     }
        
@@ -74,9 +84,7 @@ public class MiPanel extends JPanel{
         g.drawString("Panel personalizado", 75,15);
         
         //rectangulo
-        g.setColor(Color.red);
-        g.fillRect(squareX, squareY, squareW, squareH);
-        g.setColor(Color.black);
-        g.drawRect(squareX,squareY,squareW,squareH);
+        cuadro.paintCuadro(g);
+       
     }
 }
