@@ -29,7 +29,27 @@ public class MiPanel extends JPanel{
     
     public MiPanel(){
         setBorder(BorderFactory.createLineBorder(Color.black));
+        
+        addMouseListener(new MouseAdapter(){
+            
+            @Override
+            public void mousePressed(MouseEvent e){
+                
+            }
+            
+        
+        });
+        
+        addMouseMotionListener(new MouseAdapter() {
+            
+            @Override
+            public void mouseDragged(MouseEvent e){
+                
+            }
+        
+        });
     }
+       
     
     public Dimension getPreferredSize(){
         
