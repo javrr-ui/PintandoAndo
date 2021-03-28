@@ -10,6 +10,11 @@ import java.awt.Dimension;
 import java.awt.Graphics;
 import javax.swing.JPanel;
 import javax.swing.BorderFactory;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseMotionListener;
+import java.awt.event.MouseMotionAdapter;
 
 /**
  *
@@ -17,6 +22,10 @@ import javax.swing.BorderFactory;
  */
 public class MiPanel extends JPanel{
     
+    private int squareX = 50;
+    private int squareY = 50;
+    private int squareW = 20;
+    private int squareH = 20;
     
     public MiPanel(){
         setBorder(BorderFactory.createLineBorder(Color.black));
@@ -32,6 +41,12 @@ public class MiPanel extends JPanel{
       
         super.paintComponent(g);
         
-        g.drawString("Panel personalizado XD", 50,50);
+        g.drawString("Panel personalizado", 75,15);
+        
+        //rectangulo
+        g.setColor(Color.red);
+        g.fillRect(squareX, squareY, squareW, squareH);
+        g.setColor(Color.black);
+        g.drawRect(squareX,squareY,squareW,squareH);
     }
 }
