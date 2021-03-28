@@ -32,6 +32,8 @@ public class PintandoAndo {
         JFrame frame = new JFrame("Swing paint demo");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setSize(500, 500);
+        frame.add(new MiPanel());
+        frame.pack();
         frame.setVisible(true);
     }
 }
