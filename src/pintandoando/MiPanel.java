@@ -34,7 +34,7 @@ public class MiPanel extends JPanel{
             
             @Override
             public void mousePressed(MouseEvent e){
-                
+                moveSquare(e.getX(),e.getY());
             }
             
         
@@ -44,7 +44,7 @@ public class MiPanel extends JPanel{
             
             @Override
             public void mouseDragged(MouseEvent e){
-                
+                moveSquare(e.getX(),e.getY());
             }
         
         });
