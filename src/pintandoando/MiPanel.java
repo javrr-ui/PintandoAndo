@@ -49,6 +49,16 @@ public class MiPanel extends JPanel{
         
         });
     }
+    
+    private void moveSquare(int x, int y){
+        int OFFSET = 1;
+        if(squareX!=x||squareY!=y){
+            repaint(squareX,squareY,squareW+OFFSET,squareH+OFFSET);
+            squareX=x;
+            squareY=y;
+            repaint(squareX,squareY,squareW+OFFSET,squareH+OFFSET);
+        }
+    }
        
     
     public Dimension getPreferredSize(){
