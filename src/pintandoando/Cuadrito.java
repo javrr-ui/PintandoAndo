@@ -7,12 +7,13 @@ package pintandoando;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import javax.swing.JComponent;
 
 /**
  *
  * @author Javi
  */
-public class Cuadrito {
+public class Cuadrito extends JComponent{
     
     private int xPos=50;
     private int yPos=50;
@@ -21,7 +22,7 @@ public class Cuadrito {
     
     
     Cuadrito(){
-        
+       
     }
     
     
@@ -33,7 +34,7 @@ public class Cuadrito {
         g.drawRect(xPos,yPos,width,height);
         
     }
-
+    
     public int getX() {
         return xPos;
     }
