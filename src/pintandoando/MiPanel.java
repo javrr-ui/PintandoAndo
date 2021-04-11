@@ -8,6 +8,7 @@ package pintandoando;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 import javax.swing.JPanel;
 import javax.swing.BorderFactory;
 import java.awt.event.MouseEvent;
@@ -32,7 +33,7 @@ public class MiPanel extends JPanel{
             @Override
             public void mousePressed(MouseEvent e){
                 
-                moveSquare(e.getX(),e.getY());
+               moveSquare(e.getX(),e.getY());
             }
             
         
@@ -42,7 +43,7 @@ public class MiPanel extends JPanel{
             
             @Override
             public void mouseDragged(MouseEvent e){
-                moveSquare(e.getX(),e.getY());
+              moveSquare(e.getX(),e.getY());
             }
         
         });
@@ -85,6 +86,8 @@ public class MiPanel extends JPanel{
         
         //rectangulo
         cuadro.paintCuadro(g);
-       
+        
+        Graphics2D g2d = (Graphics2D )g;
+       g2d.fillRect(10, 10, 20, 20);
     }
 }
